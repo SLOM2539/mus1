@@ -1,6 +1,6 @@
 {
-    "name": "سورس ميوزك جمثون",
-    "description": "سورس ميوزك جمثون 2021",
+    "name": "سورس ميوزك فواز",
+    "description": "سورس ميوزك فواز 2021",
     "logo": "https://telegra.ph/file/b0b13433b8595ed385f07.jpg",
     "keywords": [
         "Telegram",
@@ -8,7 +8,7 @@
         "jmthon",
         "VideoPlayer"
     ],
-    "repository": "https://github.com/JMTHON-AR/mus1",
+    "repository": "https://github.com/SLOM2539/mus1",
     "env": {
         "SESSION": {
             "description": "هنا ضع كود البايروكرام",
