@@ -128,7 +128,7 @@ async def play(client, m: Message):
     if replied:
         if replied.audio or replied.voice:
             await m.delete()
-            huehue = await replied.reply("**🔄 تتم تشغيل انتظر قليلا**")
+            huehue = await replied.reply("**⇜ قاعد اشغل المطلوب انتظر**")
             dl = await replied.download()
             link = replied.link
             if replied.audio:
@@ -145,9 +145,9 @@ async def play(client, m: Message):
                 await m.reply_photo(
                     photo="https://telegra.ph/file/b0b13433b8595ed385f07.jpg",
                     caption=f"""
-**🏷️ العنوان : [{songname}]({link})
-💬 ايدي الدردشة : {chat_id}
-🎧 طلب من : {m.from_user.mention}**
+**⇜ العنوان : [{songname}]({link})
+⇜ ايدي الدردشة : {chat_id}
+⇜ طلب من : {m.from_user.mention}**
 """,
                 )
             else:
@@ -164,10 +164,10 @@ async def play(client, m: Message):
                 await m.reply_photo(
                     photo="https://telegra.ph/file/b0b13433b8595ed385f07.jpg",
                     caption=f"""
-**▶ تم تشغيل الاغنية 
-**🏷️ العنوان : [{songname}]({link})
-💬 ايدي الدردشة : {chat_id}
-🎧 طلب من : {m.from_user.mention}**
+**⇜ تم تشغيل الاغنيه 
+**⇜ العنوان : [{songname}]({link})
+⇜ ايدي الدردشة : {chat_id}
+⇜ طلب من : {m.from_user.mention}**
 """,
                 )
 
@@ -176,7 +176,7 @@ async def play(client, m: Message):
             await m.reply("يجب عليك الرد على الاغنيه او وضع اسمها مع الامر")
         else:
             await m.delete()
-            huehue = await m.reply("🔎 جاري البحث الرجاء الانتظار ")
+            huehue = await m.reply("⇜ قاعد ابحث انتظر")
             query = m.text.split(None, 1)[1]
             search = ytsearch(query)
             if search == 0:
@@ -236,7 +236,7 @@ async def vplay(client, m: Message):
     if replied:
         if replied.video or replied.document:
             await m.delete()
-            huehue = await replied.reply("**🔄 تتم العملية**")
+            huehue = await replied.reply("**⇜ تتم العملية ابشرك**")
             dl = await replied.download()
             link = replied.link
             if len(m.command) < 2:
