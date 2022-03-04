@@ -145,9 +145,9 @@ async def play(client, m: Message):
                 await m.reply_photo(
                     photo="https://telegra.ph/file/b0b13433b8595ed385f07.jpg",
                     caption=f"""
-**⇜ العنوان : [{songname}]({link})
-⇜ ايدي الدردشة : {chat_id}
-⇜ طلب من : {m.from_user.mention}**
+**• العنوان : [{songname}]({link})
+• ايدي الدردشة : {chat_id}
+• طلب من : {m.from_user.mention}**
 """,
                 )
             else:
@@ -164,10 +164,10 @@ async def play(client, m: Message):
                 await m.reply_photo(
                     photo="https://telegra.ph/file/b0b13433b8595ed385f07.jpg",
                     caption=f"""
-**⇜ تم تشغيل الاغنيه 
-**⇜ العنوان : [{songname}]({link})
-⇜ ايدي الدردشة : {chat_id}
-⇜ طلب من : {m.from_user.mention}**
+**• تم تشغيل الاغنيه 
+**• العنوان : [{songname}]({link})
+• ايدي الدردشة : {chat_id}
+• طلب من : {m.from_user.mention}**
 """,
                 )
 
@@ -196,10 +196,10 @@ async def play(client, m: Message):
                         await m.reply_photo(
                             photo=f"{thumbnail}",
                             caption=f"""
-**🏷️  العنوان : [{songname}]({url})
-⏱️ المدة : {duration}
-💬 ايدي المحادثه : {chat_id}
-🎧 طلب من : {m.from_user.mention}**
+**• العنوان : [{songname}]({url})
+• المدة : {duration}
+• ايدي المحادثه : {chat_id}
+• طلب من : {m.from_user.mention}**
 """,
                         )
                     else:
