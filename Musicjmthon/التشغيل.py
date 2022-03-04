@@ -180,7 +180,7 @@ async def play(client, m: Message):
             query = m.text.split(None, 1)[1]
             search = ytsearch(query)
             if search == 0:
-                await huehue.edit("- لم يتم العثور على شيء ")
+                await huehue.edit("⇜ لم يتم العثور على شيء ")
             else:
                 songname = search[0]
                 url = search[1]
@@ -188,7 +188,7 @@ async def play(client, m: Message):
                 thumbnail = search[3]
                 hm, ytlink = await ytdl(url)
                 if hm == 0:
-                    await huehue.edit(f"**- عذرا هناك خطأ ما** \n\n`{ytlink}`")
+                    await huehue.edit(f"**⇜ عذرا هناك خطأ ما** \n\n`{ytlink}`")
                 else:
                     if chat_id in QUEUE:
                         pos = add_to_queue(chat_id, songname, ytlink, url, "Audio", 0)
@@ -217,11 +217,11 @@ async def play(client, m: Message):
                             await m.reply_photo(
                                 photo=f"{thumbnail}",
                                 caption=f"""
-**▶ بدأ تشغيل الاغنية
-**🏷️  العنوان : [{songname}]({url})
-⏱️ المدة : {duration}
-💬 ايدي المحادثه : {chat_id}
-🎧 طلب من : {m.from_user.mention}**
+**• بدأ تشغيل الاغنية
+**• العنوان : [{songname}]({url})
+• المدة : {duration}
+• ايدي المحادثه : {chat_id}
+• طلب من : {m.from_user.mention}**
 """,
                             )
                         except Exception as ep:
@@ -248,7 +248,7 @@ async def vplay(client, m: Message):
                 else:
                     Q = 720
                     await huehue.edit(
-                        "- مسموح فقط بدقه 720, 480, 360 \n يتم البث بدقه 720p"
+                        "مسموح فقط بدقه 720, 480, 360 \n يتم البث بدقه 720p"
                     )
 
             if replied.video:
@@ -263,10 +263,10 @@ async def vplay(client, m: Message):
                 await m.reply_photo(
                     photo="https://telegra.ph/file/b0b13433b8595ed385f07.jpg",
                     caption=f"""
-#⃣ Video Di Antrian Ke {pos}
-**🏷️  العنوان : [{songname}]({url})
-💬 ايدي المحادثه : {chat_id}
-🎧 طلب من : {m.from_user.mention}**
+• Video Di Antrian Ke {pos}
+**• العنوان : [{songname}]({url})
+• ايدي المحادثه : {chat_id}
+• طلب من : {m.from_user.mention}**
 """,
                 )
             else:
@@ -287,9 +287,9 @@ async def vplay(client, m: Message):
                 await m.reply_photo(
                     photo="https://telegra.ph/file/b0b13433b8595ed385f07.jpg",
                     caption=f"""
-**🏷️  العنوان : [{songname}]({url})
-💬 ايدي المحادثه : {chat_id}
-🎧 طلب من : {m.from_user.mention}**
+**• العنوان : [{songname}]({url})
+• ايدي المحادثه : {chat_id}
+• طلب من : {m.from_user.mention}**
 """,
                 )
 
@@ -325,10 +325,10 @@ async def vplay(client, m: Message):
                         await m.reply_photo(
                             photo=f"{thumbnail}",
                             caption=f"""
-**🏷️  العنوان : [{songname}]({url})
-⏱️ المدة : {duration}
-💬 ايدي المحادثه : {chat_id}
-🎧 طلب من : {m.from_user.mention}**
+**• العنوان : [{songname}]({url})
+• المدة : {duration}
+• ايدي المحادثه : {chat_id}
+• طلب من : {m.from_user.mention}**
 """,
                         )
                     else:
@@ -344,10 +344,10 @@ async def vplay(client, m: Message):
                             await m.reply_photo(
                                 photo=f"{thumbnail}",
                                 caption=f"""
-**🏷️  العنوان : [{songname}]({url})
-⏱️ المدة : {duration}
-💬 ايدي المحادثه : {chat_id}
-🎧 طلب من : {m.from_user.mention}**
+**• العنوان : [{songname}]({url})
+• المدة : {duration}
+• ايدي المحادثه : {chat_id}
+• طلب من : {m.from_user.mention}**
 """,
                             )
                         except Exception as ep:
@@ -393,10 +393,10 @@ async def playfrom(client, m: Message):
                     await m.reply_photo(
                         photo="https://telegra.ph/file/b0b13433b8595ed385f07.jpg",
                         caption=f"""
-**▶ ابدأ تشغيل الأغاني من {chat}
-🏷️ العنوان : [{songname}]({link})
-💬 الدردشة : {chat_id}
-🎧 من الطلب : {m.from_user.mention}**
+**• ابدأ تشغيل الأغاني من {chat}
+• العنوان : [{songname}]({link})
+• الدردشة : {chat_id}
+• من الطلب : {m.from_user.mention}**
 """,                  
          )
             await hmm.delete()
@@ -415,11 +415,11 @@ async def playlist(client, m: Message):
         if len(chat_queue) == 1:
             await m.delete()
             await m.reply(
-                f"**🎧 الاغاني الشغالة الان :** \n[{chat_queue[0][0]}]({chat_queue[0][2]}) | `{chat_queue[0][3]}`",
+                f"**• الاغاني الشغاله الان :** \n[{chat_queue[0][0]}]({chat_queue[0][2]}) | `{chat_queue[0][3]}`",
                 disable_web_page_preview=True,
             )
         else:
-            QUE = f"**🎧 الاغاني الشغالة الان:** \n[{chat_queue[0][0]}]({chat_queue[0][2]}) | `{chat_queue[0][3]}` \n\n**⏯ قائمة الانتظار :**"
+            QUE = f"**• الاغاني الشغالة الان:** \n[{chat_queue[0][0]}]({chat_queue[0][2]}) | `{chat_queue[0][3]}` \n\n**⏯ قائمة الانتظار :**"
             l = len(chat_queue)
             for x in range(1, l):
                 hmm = chat_queue[x][0]
